@@ -32,10 +32,15 @@ public class Servidor {
         }
 
         HttpServer server;
-        try {
-            server = HttpServer.create(new InetSocketAddress(InetAddress.getLoopbackAddress(), 8080), 0);
-        } catch (BindException e) {
-            server = HttpServer.create(new InetSocketAddress(InetAddress.getLoopbackAddress(), 0), 0);
+        String puertoHosting = System.getenv("PORT");
+        if (puertoHosting != null) {
+            server = HttpServer.create(new InetSocketAddress(Integer.parseInt(puertoHosting)), 0);
+        } else {
+            try {
+                server = HttpServer.create(new InetSocketAddress(InetAddress.getLoopbackAddress(), 8080), 0);
+            } catch (BindException e) {
+                server = HttpServer.create(new InetSocketAddress(InetAddress.getLoopbackAddress(), 0), 0);
+            }
         }
         server.createContext("/", Servidor::manejar);
         server.start();
