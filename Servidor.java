@@ -3,8 +3,12 @@ import com.sun.net.httpserver.HttpServer;
 
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
+import java.awt.Desktop;
 import java.io.IOException;
+import java.net.BindException;
+import java.net.InetAddress;
 import java.net.InetSocketAddress;
+import java.net.URI;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -22,11 +26,34 @@ public class Servidor {
     static final SecureRandom random = new SecureRandom();
 
     public static void main(String[] args) throws IOException {
-        int puerto = Integer.parseInt(System.getenv().getOrDefault("PORT", "8080"));
-        HttpServer server = HttpServer.create(new InetSocketAddress(puerto), 0);
+        if (!Files.exists(Path.of("login.html"))) {
+            System.out.println("Ejecuta el servidor desde la carpeta del proyecto (donde esta login.html)");
+            return;
+        }
+
+        HttpServer server;
+        try {
+            server = HttpServer.create(new InetSocketAddress(InetAddress.getLoopbackAddress(), 8080), 0);
+        } catch (BindException e) {
+            server = HttpServer.create(new InetSocketAddress(InetAddress.getLoopbackAddress(), 0), 0);
+        }
         server.createContext("/", Servidor::manejar);
         server.start();
-        System.out.println("Servidor en http://localhost:" + puerto);
+
+        String url = "http://localhost:" + server.getAddress().getPort();
+        System.out.println("Servidor en " + url);
+        System.out.println("Para pararlo, cierra esta ventana o pulsa Ctrl+C");
+        abrirNavegador(url);
+    }
+
+    static void abrirNavegador(String url) {
+        try {
+            if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
+                Desktop.getDesktop().browse(URI.create(url));
+            }
+        } catch (Exception e) {
+            System.out.println("Abre " + url + " en el navegador");
+        }
     }
 
     static void manejar(HttpExchange ex) throws IOException {

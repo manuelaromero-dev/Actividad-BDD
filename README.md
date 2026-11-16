@@ -6,14 +6,24 @@ Maria
 
 https://manuelaromero-dev.github.io/Actividad-BDD/registro.html
 
-## Cómo probar el login (Java)
+## Cómo ejecutar el login (Java)
 
-GitHub Pages solo muestra el HTML. El servidor Java se ejecuta en GitHub Codespaces:
+GitHub Pages solo muestra el HTML. Para que el registro y el inicio de sesión funcionen hay que ejecutar el servidor Java.
+
+Hace falta Java 11 o superior (JDK). Se descarga gratis en https://adoptium.net
+
+1. Pulsa **Code → Download ZIP** y descomprime la carpeta.
+2. Inicia el servidor:
+   - **Windows:** doble clic en `iniciar.bat`.
+   - **Mac:** doble clic en `iniciar.command`. Si el Mac no deja abrirlo: Ajustes del Sistema → Privacidad y seguridad → "Abrir igualmente".
+   - **Terminal (cualquier sistema):** dentro de la carpeta, `java Servidor.java`.
+3. Se abre el navegador con la página de inicio de sesión (http://localhost:8080).
+4. Para parar el servidor, cierra la ventana de la consola.
+
+Los usuarios se guardan en `usuarios.txt`, en la misma carpeta. La contraseña se guarda como hash, no en texto plano.
+
+### Sin instalar nada: GitHub Codespaces
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/manuelaromero-dev/Actividad-BDD)
 
-1. Pulsa el botón y después "Create codespace".
-2. Espera 1-2 minutos: el servidor arranca solo y se abre la página de inicio de sesión.
-3. Si no se abre, ve a la pestaña "Puertos" y abre el puerto 8080.
-
-En local: `java Servidor.java` y abrir http://localhost:8080
+Pulsa el botón, después "Create codespace" y espera 1-2 minutos: el servidor arranca solo.
