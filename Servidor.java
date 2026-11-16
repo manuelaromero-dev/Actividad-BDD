@@ -22,10 +22,11 @@ public class Servidor {
     static final SecureRandom random = new SecureRandom();
 
     public static void main(String[] args) throws IOException {
-        HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
+        int puerto = Integer.parseInt(System.getenv().getOrDefault("PORT", "8080"));
+        HttpServer server = HttpServer.create(new InetSocketAddress(puerto), 0);
         server.createContext("/", Servidor::manejar);
         server.start();
-        System.out.println("Servidor en http://localhost:8080");
+        System.out.println("Servidor en http://localhost:" + puerto);
     }
 
     static void manejar(HttpExchange ex) throws IOException {
