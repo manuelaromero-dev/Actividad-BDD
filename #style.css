@@ -1,0 +1,148 @@
+/* Reset básico y tipografía moderna */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background-color: #f3f4f6;
+    color: #1f2937;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+/* Tarjeta del formulario */
+form {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 460px;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* Ocultamos los <br> de tu HTML para controlar el espacio con CSS */
+form br {
+    display: none;
+}
+
+fieldset {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #4f46e5;
+    padding: 0 8px;
+}
+
+/* Etiquetas generales y título de Género */
+label, p {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 6px;
+}
+
+p {
+    margin-top: 8px;
+    margin-bottom: 10px;
+}
+
+/* Campos de texto, correo, edad y contraseña */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+/* Radio buttons y Checkbox en línea con su texto */
+input[type="radio"],
+input[type="checkbox"] {
+    accent-color: #4f46e5;
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+    display: inline-block;
+    font-weight: 400;
+    margin-bottom: 8px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+/* Botones */
+input[type="submit"],
+input[type="reset"] {
+    width: 48%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+input[type="reset"] {
+    background-color: #e5e7eb;
+    color: #374151;
+    margin-right: 3%;
+}
+
+input[type="reset"]:hover {
+    background-color: #d1d5db;
+}
+
+input[type="submit"] {
+    background-color: #4f46e5;
+    color: #ffffff;
+}
+
+input[type="submit"]:hover {
+    background-color: #4338ca;
+}
+
+input[type="submit"]:active,
+input[type="reset"]:active {
+    transform: scale(0.98);
+}
