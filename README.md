@@ -6,6 +6,12 @@ Maria
 
 https://manuelaromero-dev.github.io/Actividad-BDD/registro.html
 
+## Login online (Java)
+
+**https://actividad-bdd.onrender.com**
+
+El servidor Java está publicado gratis en Render a partir de este repositorio. Si la página tarda en abrir, espera 1 minuto: el servidor gratuito se duerme cuando nadie lo usa.
+
 ## Cómo ejecutar el login (Java)
 
 GitHub Pages solo muestra el HTML. Para que el registro y el inicio de sesión funcionen hay que ejecutar el servidor Java.
