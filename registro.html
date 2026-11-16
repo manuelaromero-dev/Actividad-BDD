@@ -8,7 +8,7 @@
 <body>
     <h1>Formulario de registro de usuario</h1>
 
-    <form id="formRegistro">
+    <form action="/registro" method='post'>
         
         <fieldset>
             <legend>Datos personales</legend><br>
@@ -17,7 +17,7 @@
             <input type="text" required minlength="3" maxlength="40" id="nombre" name="fullname"><br><br>
             
             <label for="Correo_electrónico">Correo electrónico</label>
-            <input type="email" required id="Correo_electrónico"><br><br>
+            <input type="email" required id="Correo_electrónico" name="email"><br><br>
             
             <label for="Edad">Edad</label>
             <input type="number" required min="18" max="100" id="Edad" name="Edad"><br><br>
@@ -53,10 +53,7 @@
     
     </form>
 
-    <p id="mensaje"></p>
+    <p>¿Ya tienes cuenta? <a href="/">Inicia sesión</a></p>
 
-    <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
-
-    <script src="auth.js"></script>
 </body>
 </html>
