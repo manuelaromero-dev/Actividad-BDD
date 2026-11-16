@@ -1,0 +1,12 @@
+{
+    "name": "Actividad BDD",
+    "image": "mcr.microsoft.com/devcontainers/java:21",
+    "forwardPorts": [8080],
+    "portsAttributes": {
+        "8080": {
+            "label": "Servidor Java",
+            "onAutoForward": "openBrowser"
+        }
+    },
+    "postAttachCommand": "java Servidor.java"
+}
