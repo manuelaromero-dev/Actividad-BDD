@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3: Formulario de registro</title>
+</head>
+<body>
+    <h1>Formulario de registro de usuario</h1>
+
+    <form action="#" method='post'>
+        
+        <fieldset>
+            <legend>Datos personales</legend><br>
+
+            <label for="nombre">Nombre Completo</label>
+            <input type="text" required minlength="3" maxlength="40" id="nombre" name="fullname"><br><br>
+            
+            <label for="Correo_electrónico">Correo electrónico</label>
+            <input type="email" required id="Correo_electrónico"><br><br>
+            
+            <label for="Edad">Edad</label>
+            <input type="number" required min="18" max="100" id="Edad" name="Edad"><br><br>
+            
+            <label for="Contraseña">Contraseña</label>
+            <input type="password" required minlength="8" id="Contraseña" name="Contraseña"><br><br>
+            
+            <label for="Confirmar_Contraseña">Confirmar Contraseña</label>
+            <input type="password" required minlength="8" id="Confirmar_Contraseña" name="Confirmar Contraseña"><br><br>
+            
+            <p>Género</p>
+
+            <input type="radio" id="Femenino" name="género" value="Femenino" required>
+            <label for="Femenino">Femenino</label><br>
+
+            <input type="radio" id="Masculino" name="género" value="Masculino">
+            <label for="Masculino">Masculino</label><br>
+
+            <input type="radio" id="Otro" name="género" value="Otro">
+            <label for="Otro">Otro</label><br>
+        </fieldset><br>
+        
+
+        <fieldset>
+            <legend>Términos y Condiciones</legend>
+            <input type="checkbox" id="terminos" name="terminos" required>
+            <label for="terminos">Acepto los términos y condiciones</label>
+        </fieldset><br>
+        
+        <input type="reset" value="Restablecer">
+
+        <input type="submit" value="Enviar">
+    
+    </form> 
+
+</body>
+</html>
