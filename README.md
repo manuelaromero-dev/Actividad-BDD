@@ -4,7 +4,6 @@ Demian
 Manuela
 Maria
 
-https://manuelaromero-dev.github.io/Actividad-BDD/registro.html
 
 ## Login online (Java)
 
